@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  webserver:
+    image: nginx:1.13.0-alpine
+    ports:
+      - 2048:80
+    volumes:
+      - ./webserver/appserver.conf:/etc/nginx/conf.d/default.conf
+
+  appserver:
+    build: ./base
+    volumes:
+      - ./base:/app
+    ports:
+      - 4567:4567
