@@ -6,3 +6,18 @@
 #+BEGIN_QUOTE
 nothing to read, just do docker-compose up 
 #+END_QUOTE
+
+*kudos to:*
+- Jake: youtube:[[https://www.youtube.com/watch?v=Qw9zlE3t8Ko][Docker Compose in 12 Minutes]]
+
+*Quick Gotchas*
+  - working with sinatra: 
+    don't forget to bind it to 0.0.0.0 as:
+    #+BEGIN_SRC ruby
+        set :bind, '0.0.0.0'
+    #+END_SRC
+
+  - to let ~docker-compose use 80~, elivate its capability
+    #+BEGIN_SRC bash
+        sudo setcap cap_net_bind_service=+ep `which docker-compose`
+    #+END_SRC
