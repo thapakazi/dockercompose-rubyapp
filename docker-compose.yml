@@ -2,9 +2,9 @@ version: '2'
 
 services:
   appserver:
-    build: ./base
+    build: ./appserver
     volumes:
-      - ./base:/app
+      - ./appserver:/app
   webserver:
     image: nginx:1.13.0-alpine
     ports:
