@@ -4,4 +4,4 @@ WORKDIR "/app"
 COPY . /app
 
 RUN bundle install
-CMD ["ruby","main.rb"]
+CMD ["shotgun","--server=webrick","--port=4567","main.rb"]

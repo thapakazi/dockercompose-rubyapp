@@ -5,7 +5,6 @@ get '/' do
   "Hello #{params[:name]}"
 end
 
-
 get '/uptime' do
   `uptime`
 end
