@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  appserver:
+    build: ./appserver
+    volumes:
+      - ./appserver:/app
+  webserver:
+    image: nginx:1.13.0-alpine
+    ports:
+      - 80:80
+    volumes:
+      - ./webserver/appserver.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - appserver
